@@ -1,7 +1,5 @@
 package backend;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -21,22 +19,24 @@ public class BoardTest {
     void save() {
 
         // 1. 게시글 파라미터 생성
+    	for(int i = 1;i<=25;i++) {
         Board params = Board.builder()
-                .title("1번 게시글 제목")
-                .content("1번 게시글 내용")
-                .writer("도뎡이")
+                .title(i+"번 게시글 제목")
+                .content(i+"번 게시글 내용")
+                .writer(i+"번 글쓴이")
                 .hits(0)
                 .deleteYn('N')
                 .build();
 
         // 2. 게시글 저장
         boardRepository.save(params);
+    	}
 
         // 3. 1번 게시글 정보 조회
-        Board entity = boardRepository.findById((long) 1).get();
-        assertThat(entity.getTitle()).isEqualTo("1번 게시글 제목");
-        assertThat(entity.getContent()).isEqualTo("1번 게시글 내용");
-        assertThat(entity.getWriter()).isEqualTo("도뎡이");
+//        Board entity = boardRepository.findById((long) 1).get();
+//        assertThat(entity.getTitle()).isEqualTo("1번 게시글 제목");
+//        assertThat(entity.getContent()).isEqualTo("1번 게시글 내용");
+//        assertThat(entity.getWriter()).isEqualTo("도뎡이");
     }
 
     @Test

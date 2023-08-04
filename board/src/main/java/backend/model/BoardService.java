@@ -79,9 +79,7 @@ public class BoardService {
         return new BoardResponseDto(entity);
     }
 
-    /**
-     * 게시글 리스트 조회 - (With. pagination information)
-     */
+    // 게시글 리스트 조회 - (With. pagination information)
     public Map<String, Object> findAll(CommonParams params) {
 
         // 게시글 수 조회
