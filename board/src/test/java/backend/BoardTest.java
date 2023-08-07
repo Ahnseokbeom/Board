@@ -19,7 +19,7 @@ public class BoardTest {
     void save() {
 
         // 1. 게시글 파라미터 생성
-    	for(int i = 1;i<=25;i++) {
+    	for(int i = 26;i<=100;i++) {
         Board params = Board.builder()
                 .title(i+"번 게시글 제목")
                 .content(i+"번 게시글 내용")
